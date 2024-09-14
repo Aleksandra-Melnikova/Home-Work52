@@ -3,19 +3,23 @@ import React from 'react';
 interface Props {
     rankSymbol:string;
     suit:string;
-   style: string
 }
 
-const Card:React.FC<Props> = ({rankSymbol, suit, style}) => {
-
+const Card:React.FC<Props> = ({rankSymbol, suit}) => { let style:string = '';
+    if (suit === '♦'){
+        style = 'diams';
+    } else if (suit === '♥'){
+        style = ' hearts';
+    } else if (suit ==='♣') {
+        style = ' clubs';
+    } else if (suit === '♠'){
+        style = ' spades';}
     return (
-
-        <div>
             <span className= {`card rank-${rankSymbol.toLowerCase()} ${style}`}>
                   <span className="rank">{rankSymbol}</span>
                   <span className="suit">{suit}</span>
          </span>
-        </div>);
+    );
 
 };
 
