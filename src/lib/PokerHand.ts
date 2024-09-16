@@ -19,7 +19,6 @@ class PokerHand {
             PokerHand.arrayOfSuits.push(this.arr[i][0].suit);
         }
         const duplicates = PokerHand.arrayOfRank.filter((e, i, a) => a.indexOf(e) !== i);
-        console.log(duplicates);
         const flash = PokerHand.arrayOfSuits.every(v => v === PokerHand.arrayOfSuits[0]);
         if (flash &&  PokerHand.arrayOfRank.includes('10') && PokerHand.arrayOfRank.includes('J') && PokerHand.arrayOfRank.includes('Q')
             && PokerHand.arrayOfRank.includes('K') &&PokerHand.arrayOfRank.includes('A')){

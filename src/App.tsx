@@ -14,7 +14,6 @@ const App = () => {
     const [hand, setHand] = useState<Card1[][]>([]);
     const withdrawCards = () =>{
         const arr = cards.getCards(5);
-        console.log(arr);
         setHand(arr);
     };
 
