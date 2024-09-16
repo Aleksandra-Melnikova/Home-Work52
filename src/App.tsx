@@ -14,6 +14,7 @@ const App = () => {
     const [hand, setHand] = useState<Card1[][]>([]);
     const withdrawCards = () =>{
         const arr = cards.getCards(5);
+        console.log(arr);
         setHand(arr);
     };
 
@@ -24,7 +25,7 @@ const App = () => {
                    <p>Result of round:{new PokerHand(hand).getOutcome()}</p>}
                 {cards.deck.length >= 5 ?
                     <button onClick={withdrawCards} className='btn' type="button">Get 5 cards</button> : null}
-                {hand.length > 0 && cards.deck.length >= 5 ?
+                {hand.length > 0 && cards.deck.length >= 2 ?
                     <div className="playingCards faceImages">
                     <Card rankSymbol={hand[0][0].rank} suit={hand[0][0].suit}/>
                     <Card rankSymbol={hand[1][0].rank} suit={hand[1][0].suit}/>
