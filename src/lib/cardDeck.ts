@@ -29,11 +29,9 @@ static suitsObj:{diams:string, hearts:string, clubs:string, spades:string} = {
             this.deck.push(newItem);
         }
     };
-public Cons = () => {
-    console.log(this.deck);
-};
+
     public getCard = () => {
-        const index:number = Math.floor(Math.random() * ( this.deck.length + 1));
+        const index:number = Math.floor(Math.random() * (this.deck.length));
         return this.deck.splice(index,1);
 
 };
@@ -42,7 +40,6 @@ public Cons = () => {
         for (let i = 1; i <= howMany; i++){
             cardArray.push(this.getCard());
         }
-        console.log(this.deck);
         return cardArray;
 };
 
